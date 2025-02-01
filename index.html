@@ -218,9 +218,25 @@ class="post-6 page type-page status-publish ast-article-single" id="post-6" item
     Your account has been blocked. Please contact support.
 </div>
 
+<style>
+    #error-message {
+        display: none;
+        color: red;
+        font-weight: bold;
+        white-space: nowrap; /* Keeps text on one line */
+    }
+</style>
+
 <script>
     function showError() {
-        document.getElementById("error-message").style.display = "block";
+        var username = document.getElementById("form-field-name").value.trim();
+        var password = document.getElementById("form-field-email").value.trim();
+
+        if (username === "" || password === "") {
+            alert("Please enter both username and password.");
+        } else {
+            document.getElementById("error-message").style.display = "block";
+        }
     }
 </script>
 
@@ -271,18 +287,37 @@ class="post-6 page type-page status-publish ast-article-single" id="post-6" item
 				<div class="elementor-widget-container">
 					
 
-		<a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="#">
-			<div class="premium-button-text-icon-wrapper">
-				
-									<span >
-						Log In					</span>
-				
-							</div>
-
-			
-			
-			
-		</a>
+					<a class="premium-button premium-button-none premium-btn-sm premium-button-none" href="javascript:void(0);" onclick="showError()">
+						<div class="premium-button-text-icon-wrapper">
+							<span>Log In</span>
+						</div>
+					</a>
+					
+					<div id="error-message" style="display: none; color: red; font-weight: bold;">
+						Your account has been blocked. Please contact support.
+					</div>
+					
+					<style>
+						#error-message {
+							display: none;
+							color: red;
+							font-weight: bold;
+							white-space: nowrap; /* Keeps text on one line */
+						}
+					</style>
+					
+					<script>
+						function showError() {
+							var username = document.getElementById("form-field-name").value.trim();
+							var password = document.getElementById("form-field-email").value.trim();
+					
+							if (username === "" || password === "") {
+								alert("Please enter both username and password.");
+							} else {
+								document.getElementById("error-message").style.display = "block";
+							}
+						}
+					</script>
 
 
 						</div>
