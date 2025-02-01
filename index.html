@@ -208,19 +208,21 @@ class="post-6 page type-page status-publish ast-article-single" id="post-6" item
 				<div class="elementor-widget-container">
 					
 
-		<a class="premium-button premium-button-none premium-btn-sm premium-button-none" href="index.html">
-			<div class="premium-button-text-icon-wrapper">
-				
-									<span >
-						Log In					</span>
-				
-							</div>
+		<a class="premium-button premium-button-none premium-btn-sm premium-button-none" href="javascript:void(0);" onclick="showError()">
+    <div class="premium-button-text-icon-wrapper">
+        <span>Log In</span>
+    </div>
+</a>
 
-			
-			
-			
-		</a>
+<div id="error-message" style="display: none; color: red; font-weight: bold;">
+    Your account has been blocked. Please contact support.
+</div>
 
+<script>
+    function showError() {
+        document.getElementById("error-message").style.display = "block";
+    }
+</script>
 
 						</div>
 				</div>
